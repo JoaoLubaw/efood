@@ -22,7 +22,6 @@ export const CartContainer = styled.aside`
   height: 100%;
   width: 360px;
   background-color: ${colors.roman};
-  z-index: 2200;
   position: fixed;
   top: 0;
   right: 0;
@@ -55,7 +54,8 @@ export const CartContainer = styled.aside`
     margin: 0;
   }
 
-  .continue {
+  .continue,
+  .back {
     background-color: ${colors.beige};
     border: none;
     padding: 8px 0;

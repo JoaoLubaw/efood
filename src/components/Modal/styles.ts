@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Close = styled.img`
   height: 16px;
@@ -48,6 +48,24 @@ export const ModalContainer = styled.div`
       font-size: 16px;
       font-weight: normal;
       margin-bottom: 12px;
+    }
+
+    @media (max-width: ${breakpoints.desktop}) {
+      margin: 0;
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    top: 10%;
+    width: 340px;
+    left: 10%;
+    display: block;
+
+    h3 {
+      margin-top: 20px;
     }
   }
 `

@@ -1,10 +1,10 @@
-import { RingLoader } from 'react-spinners'
+import { PropagateLoader } from 'react-spinners'
 import { colors } from '../../styles'
 import { Container } from './styles'
 
 const Loader = () => (
   <Container>
-    <RingLoader color={colors.roman} />
+    <PropagateLoader color={colors.roman} />
   </Container>
 )
 

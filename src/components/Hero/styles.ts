@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const HeroContainer = styled.div`
   position: relative;
@@ -24,6 +24,10 @@ export const HeroContainer = styled.div`
     margin-left: 22.5%;
     padding-top: 24px;
     padding-bottom: 32px;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      margin-left: 10%;
+    }
   }
 
   img {
@@ -32,6 +36,7 @@ export const HeroContainer = styled.div`
     width: 100%;
     object-fit: cover;
     max-height: 290px;
+    height: 100%;
   }
 
   ::before {
@@ -43,5 +48,18 @@ export const HeroContainer = styled.div`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: -1;
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    height: 240px;
+
+    h2,
+    span {
+      font-size: 24px;
+    }
+
+    h2 {
+      margin-top: 120px;
+    }
   }
 `

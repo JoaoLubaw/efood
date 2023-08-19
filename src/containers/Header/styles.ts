@@ -50,10 +50,16 @@ export const RestaurantHeaderContainer = styled.header`
     justify-content: space-between;
     margin: 0 171px;
 
-    p {
+    .OpenCart {
+      background-color: transparent;
+      border: none;
       font-size: 18px;
       font-weight: 900;
       text-align: center;
+
+      @media (max-width: ${breakpoints.desktop}) {
+        display: none;
+      }
     }
   }
 
@@ -65,8 +71,31 @@ export const RestaurantHeaderContainer = styled.header`
   }
 `
 
+export const CarrinhoMobile = styled.button`
+  display: none;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    display: block;
+    position: absolute;
+    right: 24px;
+    top: 10px;
+    height: 16px;
+    width: 16px;
+    background-color: transparent;
+    border: none;
+
+    img {
+      height: 32px;
+    }
+  }
+`
+
 export const Back = styled(Link)`
   text-decoration: none;
   font-size: 18px;
   font-weight: 900;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    display: none;
+  }
 `
