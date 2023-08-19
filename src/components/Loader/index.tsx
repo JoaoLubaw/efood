@@ -1,4 +1,4 @@
-import PropagateLoader from 'react-spinners/PropagateLoader'
+import { PropagateLoader } from 'react-spinners'
 import { colors } from '../../styles'
 import { Container } from './styles'
 
