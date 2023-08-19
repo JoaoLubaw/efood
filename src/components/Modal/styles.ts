@@ -58,10 +58,10 @@ export const ModalContainer = styled.div`
     }
   }
 
-  @media (max-width: ${breakpoints.desktop}) {
-    top: 10%;
-    width: 340px;
-    left: 10%;
+  @media (max-width: ${breakpoints.tablet}) {
+    top: 6%;
+    width: 300px;
+    left: 6%;
     display: block;
 
     h3 {
@@ -84,4 +84,9 @@ export const Image = styled.img`
   height: 280px;
   width: 280px;
   object-fit: cover;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 240px;
+    width: 240px;
+  }
 `
