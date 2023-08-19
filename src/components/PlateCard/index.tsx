@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import Modal from '../Modal'
 import { PlateCardContainer } from './styles'
 
 type Props = {
@@ -5,18 +7,34 @@ type Props = {
   id: string
   nome: string
   descricao: string
+  preco: string
+  porcao: string
 }
 
-const PlateCard = ({ descricao, foto, id, nome }: Props) => {
+const PlateCard = ({ descricao, foto, id, nome, preco, porcao }: Props) => {
+  const [open, setOpen] = useState(false)
+
   return (
-    <PlateCardContainer>
-      <div className="content">
-        <img src={foto} alt="Prato" />
-        <h3>{nome}</h3>
-        <p>{descricao} </p>
-        <button>Adicionar ao carrinho</button>
-      </div>
-    </PlateCardContainer>
+    <>
+      <PlateCardContainer>
+        <div className="content">
+          <img src={foto} alt="Prato" />
+          <h3>{nome}</h3>
+          <p>{descricao} </p>
+          <button onClick={() => setOpen(!open)}>Adicionar ao carrinho</button>
+        </div>
+      </PlateCardContainer>
+
+      <Modal
+        onClose={() => setOpen(false)}
+        open={open}
+        descricao={descricao}
+        foto={foto}
+        nome={nome}
+        porcao={porcao}
+        preco={preco}
+      />
+    </>
   )
 }
 

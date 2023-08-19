@@ -1,6 +1,6 @@
 interface Plate {
   foto: string
-  preco: number
+  preco: string
   id: number
   nome: string
   descricao: string

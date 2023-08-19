@@ -40,6 +40,8 @@ const RestaurantMenu = () => {
                   foto={plate.foto}
                   id={plate.id.toString()}
                   nome={plate.nome}
+                  porcao={plate.porcao}
+                  preco={plate.preco}
                 />
               </li>
             ))}

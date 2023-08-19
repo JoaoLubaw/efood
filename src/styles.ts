@@ -23,6 +23,10 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
     }
 
+    button {
+      cursor: pointer;
+    }
+
     body {
         background-color: ${colors.lighterBeige};
         color: ${colors.roman};
