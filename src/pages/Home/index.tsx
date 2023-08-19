@@ -1,16 +1,16 @@
-import Footer from '../../containers/Footer'
+import Loader from '../../components/Loader'
 import Header from '../../containers/Header'
 import RestaurantList from '../../containers/RestaurantList'
 import { useGetRestaurantQuery } from '../../services/api'
 
 const Home = () => {
-  const { data: Restaurants } = useGetRestaurantQuery()
+  const { data: Restaurants, isLoading } = useGetRestaurantQuery()
 
   return (
     <>
       <Header home />
-      <RestaurantList restaurants={Restaurants} />
-      <Footer />
+
+      {isLoading ? <Loader /> : <RestaurantList restaurants={Restaurants} />}
     </>
   )
 }

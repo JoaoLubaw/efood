@@ -4,7 +4,7 @@ import { PlateCardContainer } from './styles'
 
 type Props = {
   foto: string
-  id: string
+  id: number
   nome: string
   descricao: string
   preco: string
@@ -26,8 +26,9 @@ const PlateCard = ({ descricao, foto, id, nome, preco, porcao }: Props) => {
       </PlateCardContainer>
 
       <Modal
+        id={id}
         onClose={() => setOpen(false)}
-        open={open}
+        openModal={open}
         descricao={descricao}
         foto={foto}
         nome={nome}

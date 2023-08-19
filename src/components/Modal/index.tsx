@@ -1,10 +1,13 @@
 import * as S from './styles'
 import closeIMG from '../../assets/images/close.png'
-import { useState } from 'react'
 import { parseToBrl } from '../../utils'
 
+import { add, open } from '../../store/Reducers/cart'
+import { useDispatch } from 'react-redux'
+
 type Props = {
-  open: boolean
+  id: number
+  openModal: boolean
   porcao: string
   foto: string
   preco: string
@@ -14,15 +17,33 @@ type Props = {
 }
 
 const Modal = ({
+  id,
   descricao,
   onClose,
   foto,
   nome,
   porcao,
   preco,
-  open
+  openModal
 }: Props) => {
-  return open ? (
+  const dispatch = useDispatch()
+
+  const plateToAdd: Plate = {
+    id,
+    foto,
+    preco,
+    nome,
+    descricao,
+    porcao
+  }
+
+  const addToCart = () => {
+    onClose()
+    dispatch(add(plateToAdd))
+    dispatch(open())
+  }
+
+  return openModal ? (
     <>
       <S.ModalContainer>
         <S.Image src={foto} alt={foto} />
@@ -31,9 +52,9 @@ const Modal = ({
           <h3>{nome}</h3>
           <p>{descricao}</p>
           <p>Serve: de {porcao}</p>
-          <button>
+          <button onClick={addToCart}>
             Adicionar ao carrinho - {parseToBrl(parseFloat(preco))}
-          </button>{' '}
+          </button>
         </div>
       </S.ModalContainer>
       <S.Overlay onClick={onClose} />

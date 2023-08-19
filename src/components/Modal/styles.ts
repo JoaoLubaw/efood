@@ -25,7 +25,7 @@ export const ModalContainer = styled.div`
 
     button {
       margin-top: 64px;
-      padding: 4px 0;
+      padding: 8px 0;
       width: 218px;
       background-color: ${colors.beige};
       border: none;
