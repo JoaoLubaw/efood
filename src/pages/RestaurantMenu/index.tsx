@@ -11,6 +11,10 @@ type RestaurantParams = {
   id: string
 }
 
+type Props = {
+  descricao: string
+}
+
 const RestaurantMenu = () => {
   const { id } = useParams() as RestaurantParams
   const { data: restaurant, isLoading } = useGetCardapioQuery(id)
@@ -31,7 +35,6 @@ const RestaurantMenu = () => {
             tipo={formattedTipo}
             titulo={restaurant?.titulo}
           />
-
           <div className="container">
             {restaurant ? (
               <PlatesList>
