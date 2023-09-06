@@ -19,6 +19,13 @@ const RestaurantCard = ({
   title,
   tags
 }: Props) => {
+  const getDescription = (text: string) => {
+    if (text.length > 300) {
+      return text.slice(0, 297) + '...'
+    }
+    return text
+  }
+
   return (
     <S.CardContainer>
       <S.CardHero>
@@ -40,7 +47,7 @@ const RestaurantCard = ({
             <img src={star} alt="Estrela" />
           </div>
         </S.CardHeader>
-        <p>{descricao}</p>
+        <p>{getDescription(descricao)}</p>
         <S.Button to={`/${id}`}>Saiba Mais</S.Button>
       </S.CardBody>
     </S.CardContainer>

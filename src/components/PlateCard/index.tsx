@@ -21,8 +21,8 @@ const PlateCard = ({ descricao, foto, id, nome, preco, porcao }: Props) => {
           <img src={foto} alt="Prato" />
           <h3>{nome}</h3>
           <p>{descricao} </p>
-          <button onClick={() => setOpen(!open)}>Adicionar ao carrinho</button>
         </div>
+        <button onClick={() => setOpen(!open)}>Adicionar ao carrinho</button>
       </PlateCardContainer>
 
       <Modal

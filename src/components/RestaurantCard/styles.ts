@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 
 export const CardContainer = styled.div`
   width: 472px;
-
+  height: 400px;
+  height: 100%;
   @media (max-width: ${breakpoints.tablet}) {
     max-width: 300px;
   }
@@ -15,14 +16,13 @@ export const CardHero = styled.div`
 
   img {
     width: 100%;
-    height: 300px;
+    height: 216px;
     object-fit: cover;
   }
 `
 
 export const TagsContainer = styled.div`
   display: flex;
-
   position: absolute;
   top: 16px;
   right: 16px;
